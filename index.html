@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXORA | Premium Editing Bundles</title>
+    <meta name="description" content="Premium editing packs, cinematic bundles, video presets, and professional content creation assets">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F4E4BC;
+            --gold-dark: #B8941F;
+            --gold-glow: rgba(212, 175, 55, 0.3);
+            --dark: #0a0a0a;
+            --dark-lighter: #141414;
+            --dark-card: #1a1a1a;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: #fff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Animated Background with Floating Images */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+            background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            animation: twinkle 5s ease-in-out infinite;
+            opacity: 0.5;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.8; }
+        }
+
+        /* Floating Pack Images */
+        .floating-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .floating-item {
+            position: absolute;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            opacity: 0.15;
+            animation: floatUp 20s infinite linear;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .floating-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(30%) brightness(0.8);
+        }
+
+        .floating-item:nth-child(1) { width: 180px; height: 120px; left: 5%; animation-delay: 0s; animation-duration: 25s; }
+        .floating-item:nth-child(2) { width: 140px; height: 100px; left: 15%; animation-delay: 2s; animation-duration: 30s; }
+        .floating-item:nth-child(3) { width: 200px; height: 140px; left: 25%; animation-delay: 4s; animation-duration: 28s; }
+        .floating-item:nth-child(4) { width: 160px; height: 110px; left: 70%; animation-delay: 1s; animation-duration: 32s; }
+        .floating-item:nth-child(5) { width: 190px; height: 130px; left: 80%; animation-delay: 3s; animation-duration: 26s; }
+        .floating-item:nth-child(6) { width: 150px; height: 100px; left: 90%; animation-delay: 5s; animation-duration: 29s; }
+        .floating-item:nth-child(7) { width: 170px; height: 120px; left: 40%; animation-delay: 6s; animation-duration: 31s; }
+        .floating-item:nth-child(8) { width: 130px; height: 90px; left: 55%; animation-delay: 7s; animation-duration: 27s; }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) rotate(0deg) scale(0.8); opacity: 0; }
+            10% { opacity: 0.2; }
+            90% { opacity: 0.2; }
+            100% { transform: translateY(-100vh) rotate(360deg) scale(1.2); opacity: 0; }
+        }
+
+        /* Gradient Overlay */
+        .gradient-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.02) 0%, transparent 30%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: linear-gradient(to bottom, rgba(10,10,10,0.9) 0%, transparent 100%);
+            backdrop-filter: blur(20px);
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--gold);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-cta {
+            padding: 10px 25px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--dark) !important;
+            border-radius: 30px;
+            font-weight: 700 !important;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Main Content */
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 120px 5% 80px;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--gold);
+            margin-bottom: 30px;
+            animation: fadeInUp 0.8s ease-out;
+            backdrop-filter: blur(10px);
+        }
+
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(4rem, 12vw, 8rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, #fff 0%, var(--gold-light) 50%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease-out 0.1s both;
+            text-shadow: 0 0 80px rgba(212, 175, 55, 0.3);
+        }
+
+        .brand-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-weight: 300;
+            color: rgba(255,255,255,0.6);
+            letter-spacing: 12px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        /* Animated Text Rotator */
+        .text-rotator {
+            height: 60px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .text-rotator::before,
+        .text-rotator::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 15px;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .text-rotator::before {
+            top: 0;
+            background: linear-gradient(to bottom, var(--dark), transparent);
+        }
+
+        .text-rotator::after {
+            bottom: 0;
+            background: linear-gradient(to top, var(--dark), transparent);
+        }
+
+        .rotator-track {
+            animation: rotateText 9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        .rotator-item {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .rotator-item span:first-child {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .rotator-item span:last-child {
+            color: var(--gold);
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+        }
+
+        @keyframes rotateText {
+            0%, 30% { transform: translateY(0); }
+            33.33%, 63.33% { transform: translateY(-60px); }
+            66.66%, 96.66% { transform: translateY(-120px); }
+            100% { transform: translateY(0); }
+        }
+
+        .hero-description {
+            max-width: 600px;
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.8;
+            margin-bottom: 30px;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        /* ========= NEW BUTTON ========= */
+        .visit-plans-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 38px;
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            backdrop-filter: blur(8px);
+            margin-top: 10px;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .visit-plans-btn:hover {
+            background: var(--gold);
+            color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        }
+        /* =============================== */
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 60px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, #fff, var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-subtitle {
+            color: rgba(255,255,255,0.5);
+            font-size: 1.1rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            perspective: 1000px;
+        }
+
+        /* Premium Pricing Cards with Shimmer */
+        .pricing-card {
+            position: relative;
+            background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255,255,255,0.1),
+                transparent
+            );
+            transition: left 0.7s;
+        }
+
+        .pricing-card:hover::before {
+            left: 100%;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 
+                0 30px 60px rgba(0,0,0,0.4),
+                0 0 40px rgba(212, 175, 55, 0.1);
+        }
+
+        /* === FEATURED BADGE REMOVED — class kept but no badge element exists now === */
+        .pricing-card.featured {
+            border-color: rgba(212, 175, 55, 0.4);
+            background: linear-gradient(145deg, rgba(212, 175, 55, 0.05) 0%, rgba(255,255,255,0.02) 100%);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        /* No featured badge span in markup anymore */
+
+        .card-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .pricing-card:hover .card-image {
+            transform: scale(1.1);
+        }
+
+        .card-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 15px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .pricing-card:hover .card-image-overlay {
+            opacity: 1;
+        }
+
+        .quick-view {
+            padding: 8px 20px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            color: #fff;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .quick-view:hover {
+            background: var(--gold);
+            color: var(--dark);
+            border-color: var(--gold);
+        }
+
+        .pack-category {
+            font-size: 0.8rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .pack-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .pack-description {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .price-container {
+            margin-bottom: 25px;
+        }
+
+        .price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .price-original {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.3);
+            text-decoration: line-through;
+            margin-right: 10px;
+        }
+
+        .price-green { color: #4ade80; }
+        .price-gold { color: var(--gold); text-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
+        .price-red { color: #f87171; }
+
+        .price-period {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.4);
+            font-weight: 400;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .features-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .features-list i {
+            color: var(--gold);
+            font-size: 0.8rem;
+        }
+
+        .get-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 16px 30px;
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .get-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .get-btn:hover::before {
+            left: 100%;
+        }
+
+        .get-btn:hover {
+            background: var(--gold);
+            color: var(--dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .pricing-card.featured .get-btn {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--dark);
+            border: none;
+        }
+
+        .pricing-card.featured .get-btn:hover {
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Trust Section Redesigned */
+        .trust-section {
+            padding: 100px 5%;
+            background: linear-gradient(to bottom, transparent, rgba(212, 175, 55, 0.02), transparent);
+        }
+
+        .trust-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .trust-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trust-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .trust-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .trust-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .trust-icon-wrapper {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--gold);
+            transition: all 0.3s;
+        }
+
+        .trust-card:hover .trust-icon-wrapper {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .trust-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .trust-description {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.6;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Features Showcase */
+        .showcase-section {
+            padding: 100px 5%;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: 50px auto 0;
+        }
+
+        .showcase-item {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .showcase-item:hover {
+            background: rgba(212, 175, 55, 0.05);
+            border-color: rgba(212, 175, 55, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .showcase-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--dark);
+        }
+
+        .showcase-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .showcase-desc {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 5%;
+        }
+
+        .contact-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 50px;
+        }
+
+        .contact-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .contact-info p {
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s;
+        }
+
+        .contact-method:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .contact-method i {
+            width: 40px;
+            height: 40px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0,0,0,0.5);
+            border-top: 1px solid var(--glass-border);
+            padding: 60px 5% 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .footer-links h4 {
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--glass-border);
+            color: rgba(255,255,255,0.3);
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.7);
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--dark);
+            border-color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 968px) {
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+            .pricing-card.featured:hover {
+                transform: scale(1) translateY(-10px);
+            }
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+            .showcase-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nav-links {
+                display: none;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .social-links {
+                justify-content: center;
+            }
+            .stats-bar {
+                gap: 30px;
+            }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body oncontextmenu="return false;">
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="stars"></div>
+        <div class="floating-container">
+            <div class="floating-item"><img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?w=400" alt="Editing"></div>
+            <div class="floating-item"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=400" alt="Color Grading"></div>
+            <div class="floating-item"><img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=400" alt="Cinematic"></div>
+            <div class="floating-item"><img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400" alt="Camera"></div>
+            <div class="floating-item"><img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=400" alt="Film"></div>
+            <div class="floating-item"><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400" alt="Production"></div>
+            <div class="floating-item"><img src="https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=400" alt="Timeline"></div>
+            <div class="floating-item"><img src="https://images.unsplash.com/photo-1535016120720-40c646be5580?w=400" alt="Studio"></div>
+        </div>
+    </div>
+    <div class="gradient-overlay"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-logo">LUXORA</div>
+        <div class="nav-links">
+            <a href="#pricing">Pricing</a>
+            <a href="#features">Features</a>
+            <a href="#trust">Why Us</a>
+            <a href="#contact" class="nav-cta">Get Started</a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="badge">
+                <i class="fas fa-sparkles"></i>
+                Trusted by 10,000+ Creators Worldwide
+            </div>
+            
+            <h1 class="brand-name">LUXORA</h1>
+            <p class="brand-subtitle">Premium Editing Assets</p>
+            
+            <div class="text-rotator">
+                <div class="rotator-track">
+                    <div class="rotator-item">
+                        <span>Create</span>
+                        <span>Cinematic</span>
+                    </div>
+                    <div class="rotator-item">
+                        <span>Enhance</span>
+                        <span>Content</span>
+                    </div>
+                    <div class="rotator-item">
+                        <span>Go</span>
+                        <span>Viral</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="hero-description">
+                Professional-grade editing bundles, presets, and cinematic assets designed to transform your content into stunning visual experiences.
+            </p>
+
+            <!-- NEW BUTTON: Visit Plans (scrolls to #pricing) -->
+            <a href="#pricing" class="visit-plans-btn">
+                <i class="fas fa-tag"></i> Visit Plans
+            </a>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing-section" id="pricing">
+            <div class="section-header scroll-reveal">
+                <span class="section-label">Pricing Plans</span>
+                <h2 class="section-title">Choose Your Bundle</h2>
+                <p class="section-subtitle">Professional tools for every creator's journey</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Starter Pack -->
+                <div class="pricing-card scroll-reveal">
+                    <div class="card-image-wrapper">
+                        <img src="https://i.postimg.cc/wMtwN1cB/images-(28).jpg" alt="Starter Pack" class="card-image">
+                        <div class="card-image-overlay">
+                            <button class="quick-view">Quick Preview</button>
+                        </div>
+                    </div>
+                    <div class="pack-category">Starter</div>
+                    <h3 class="pack-name">Small Edition</h3>
+                    <p class="pack-description">Perfect for beginners looking to enhance their content quality</p>
+                    
+                    <div class="price-container">
+                        <div class="price price-green">
+                            <span class="price-original">$49</span>$19
+                        </div>
+                        <span class="price-period">One-time payment</span>
+                    </div>
+
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> 50+ Premium Presets</li>
+                        <li><i class="fas fa-check"></i> 20 LUTs Pack</li>
+                        <li><i class="fas fa-check"></i> Basic Transition Pack</li>
+                        <li><i class="fas fa-check"></i> Mobile & Desktop Support</li>
+                        <li><i class="fas fa-check"></i> Community Access</li>
+                    </ul>
+
+                    <a href="https://wa.me/923104882921?text=Hi%20Sir%20I%20Want%20More%20Details%20About%20Small%20Edition%20Pack" class="get-btn">
+                        <i class="fas fa-bolt"></i> Get Started
+                    </a>
+                </div>
+
+                <!-- Premium Bundle (featured class remains, but badge span removed) -->
+                <div class="pricing-card featured scroll-reveal">
+                    <!-- NO MOST POPULAR BADGE -->
+                    <div class="card-image-wrapper">
+                        <img src="https://i.postimg.cc/8zGx2bm3/images-(29).jpg" alt="Premium Bundle" class="card-image">
+                        <div class="card-image-overlay">
+                            <button class="quick-view">Quick Preview</button>
+                        </div>
+                    </div>
+                    <div class="pack-category">Professional</div>
+                    <h3 class="pack-name">Premium Bundle</h3>
+                    <p class="pack-description">Complete toolkit for serious content creators and influencers</p>
+                    
+                    <div class="price-container">
+                        <div class="price price-gold">
+                            <span class="price-original">$99</span>$39
+                        </div>
+                        <span class="price-period">One-time payment</span>
+                    </div>
+
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> 200+ Premium Presets</li>
+                        <li><i class="fas fa-check"></i> 100+ Cinematic LUTs</li>
+                        <li><i class="fas fa-check"></i> Advanced Transitions</li>
+                        <li><i class="fas fa-check"></i> Sound Effects Library</li>
+                        <li><i class="fas fa-check"></i> Motion Graphics Pack</li>
+                        <li><i class="fas fa-check"></i> Priority Support</li>
+                    </ul>
+
+                    <a href="https://wa.me/923104882921?text=Hi%20Sir%20I%20Want%20More%20Details%20About%20Premium%20Bundle" class="get-btn">
+                        <i class="fas fa-crown"></i> Get Premium
+                    </a>
+                </div>
+
+                <!-- Mega Bundle -->
+                <div class="pricing-card scroll-reveal">
+                    <div class="card-image-wrapper">
+                        <img src="https://i.postimg.cc/FHKVkdrF/maxresdefault.jpg" alt="Mega Bundle" class="card-image">
+                        <div class="card-image-overlay">
+                            <button class="quick-view">Quick Preview</button>
+                        </div>
+                    </div>
+                    <div class="pack-category">Enterprise</div>
+                    <h3 class="pack-name">Full Mega Bundle</h3>
+                    <p class="pack-description">Ultimate collection for agencies and professional studios</p>
+                    
+                    <div class="price-container">
+                        <div class="price price-red">
+                            <span class="price-original">$199</span>$79
+                        </div>
+                        <span class="price-period">One-time payment</span>
+                    </div>
+
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> 500+ Premium Presets</li>
+                        <li><i class="fas fa-check"></i> 300+ Exclusive LUTs</li>
+                        <li><i class="fas fa-check"></i> Complete FX Library</li>
+                        <li><i class="fas fa-check"></i> 4K Stock Footage</li>
+                        <li><i class="fas fa-check"></i> Commercial License</li>
+                        <li><i class="fas fa-check"></i> 1-on-1 Mentorship</li>
+                        <li><i class="fas fa-check"></i> Lifetime Updates</li>
+                    </ul>
+
+                    <a href="https://wa.me/923104882921?text=Hi%20Sir%20I%20Want%20More%20Details%20About%20Full%20Mega%20Bundle" class="get-btn">
+                        <i class="fas fa-gem"></i> Get Mega
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Showcase -->
+        <section class="showcase-section" id="features">
+            <div class="section-header scroll-reveal">
+                <span class="section-label">Our Collection</span>
+                <h2 class="section-title">What's Inside?</h2>
+                <p class="section-subtitle">Curated assets for every editing need</p>
+            </div>
+
+            <div class="showcase-grid">
+                <div class="showcase-item scroll-reveal">
+                    <div class="showcase-icon"><i class="fas fa-fire"></i></div>
+                    <h4 class="showcase-title">Viral Reel Bundles</h4>
+                    <p class="showcase-desc">Trending templates and effects optimized for Instagram, TikTok, and YouTube Shorts</p>
+                </div>
+                <div class="showcase-item scroll-reveal">
+                    <div class="showcase-icon"><i class="fas fa-film"></i></div>
+                    <h4 class="showcase-title">Cinematic LUTs</h4>
+                    <p class="showcase-desc">Hollywood-grade color grading presets for that premium film look</p>
+                </div>
+                <div class="showcase-item scroll-reveal">
+                    <div class="showcase-icon"><i class="fas fa-magic"></i></div>
+                    <h4 class="showcase-title">Premium Courses</h4>
+                    <p class="showcase-desc">Seamless Pro Courses of Big Creators</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Section -->
+        <section class="trust-section" id="trust">
+            <div class="trust-container">
+                <div class="section-header scroll-reveal">
+                    <span class="section-label">Why Choose Us</span>
+                    <h2 class="section-title">Trusted by Professionals</h2>
+                    <p class="section-subtitle">We prioritize quality, security, and your creative success</p>
+                </div>
+
+                <div class="trust-grid">
+                    <div class="trust-card scroll-reveal">
+                        <div class="trust-icon-wrapper">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="trust-title">Secure Checkout</h3>
+                        <p class="trust-description">Bank-grade 256-bit SSL encryption protects every transaction. We never store your payment details and partner with trusted payment processors to ensure your financial data remains completely secure.</p>
+                    </div>
+
+                    <div class="trust-card scroll-reveal">
+                        <div class="trust-icon-wrapper">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3 class="trust-title">Global Access</h3>
+                        <p class="trust-description">Instant worldwide delivery with CDN-optimized downloads. Access your purchases from any device, anywhere in the world. Multi-language support and 24/7 availability ensures you're never limited by location.</p>
+                    </div>
+
+                    <div class="trust-card scroll-reveal">
+                        <div class="trust-icon-wrapper">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <h3 class="trust-title">Instant Download</h3>
+                        <p class="trust-description">No waiting times. Get immediate access to your assets right after purchase with our high-speed download servers. All files are organized, labeled, and ready to import into your editing software.</p>
+                    </div>
+
+                    <div class="trust-card scroll-reveal">
+                        <div class="trust-icon-wrapper">
+                            <i class="fas fa-undo"></i>
+                        </div>
+                        <h3 class="trust-title">Money-Back Guarantee</h3>
+                        <p class="trust-description">Not satisfied? We offer a 7-day no-questions-asked refund policy. If our assets don't meet your expectations, contact our support team for a full refund. Your investment is completely risk-free.</p>
+                    </div>
+
+                    <div class="trust-card scroll-reveal">
+                        <div class="trust-icon-wrapper">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="trust-title">24/7 Expert Support</h3>
+                        <p class="trust-description">Our team of professional editors is available round the clock to help with installation, troubleshooting, or creative advice. Get personalized assistance via WhatsApp, email, or video call.</p>
+                    </div>
+
+                    <div class="trust-card scroll-reveal">
+                        <div class="trust-icon-wrapper">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3 class="trust-title">Lifetime Updates</h3>
+                        <p class="trust-description">Purchase once, get updates forever. We regularly add new presets, effects, and features to our bundles. All existing customers receive free access to future improvements and expansion packs.</p>
+                    </div>
+                </div>
+
+                <div class="stats-bar scroll-reveal">
+                    <div class="stat-item">
+                        <span class="stat-number">10K+</span>
+                        <span class="stat-label">Happy Customers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Premium Assets</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">99%</span>
+                        <span class="stat-label">Satisfaction Rate</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Support Available</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="section-header scroll-reveal">
+                <span class="section-label">Get in Touch</span>
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-subtitle">Have questions? We're here to help</p>
+            </div>
+
+            <div class="contact-wrapper scroll-reveal">
+                <div class="contact-info">
+                    <h3>Start Your Journey</h3>
+                    <p>Whether you need help choosing the right bundle or have questions about our assets, our team is ready to assist you every step of the way.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <div style="font-weight: 600; color: #fff;">WhatsApp</div>
+                                <div style="font-size: 0.9rem; color: rgba(255,255,255,0.5);">+92 310 4882921</div>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <div style="font-weight: 600; color: #fff;">Email</div>
+                                <div style="font-size: 0.9rem; color: rgba(255,255,255,0.5);">support@luxora.com</div>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <div style="font-weight: 600; color: #fff;">Response Time</div>
+                                <div style="font-size: 0.9rem; color: rgba(255,255,255,0.5);">Usually within 1 hour</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully! We will contact you soon.');">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="text" placeholder="Subject" required>
+                    <textarea placeholder="How can we help you?" required></textarea>
+                    <button type="submit" class="get-btn" style="width: 100%; margin-top: 10px;">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo">LUXORA</span>
+                    <p>Premium editing assets for creators who demand excellence. Elevate your content with professional-grade tools.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#">Starter Pack</a></li>
+                        <li><a href="#">Premium Bundle</a></li>
+                        <li><a href="#">Mega Bundle</a></li>
+                        <li><a href="#">New Releases</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Installation Guide</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2024 <span style="color: var(--gold);">Luxora</span> | IBRIX Official. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Create floating animation variations
+        function initFloatingItems() {
+            const items = document.querySelectorAll('.floating-item');
+            items.forEach((item, index) => {
+                item.style.animationDelay = `${index * 2}s`;
+                item.style.animationDuration = `${20 + Math.random() * 15}s`;
+            });
+        }
+
+        // Scroll reveal animation
+        function scrollReveal() {
+            const reveals = document.querySelectorAll('.scroll-reveal');
+            reveals.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('active');
+                }
+            });
+        }
+
+        // Smooth scroll for navigation (including new Visit Plans button)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Initialize
+        window.addEventListener('load', () => {
+            initFloatingItems();
+            scrollReveal();
+        });
+        window.addEventListener('scroll', scrollReveal);
+
+        // Add parallax effect to floating items
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelectorAll('.floating-item');
+            parallax.forEach((item, index) => {
+                const speed = 0.5 + (index * 0.1);
+                item.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
