@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "https://truecaller-web.pages.dev" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, OPTIONS" }
+      ]
+    }
+  ],
+  "rewrites": [
+    { "source": "/caller", "destination": "/api/caller.js" }
+  ]
+}
